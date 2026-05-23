@@ -11,7 +11,7 @@ export function Footer() {
               Pâtisserie Amélie Armand
             </div>
             <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              Artisan pâtissier · Chocolatier
+              Artisan pâtissier · Chocolatier · Lyon 9ème
             </div>
           </div>
         </div>

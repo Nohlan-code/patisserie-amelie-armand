@@ -19,7 +19,7 @@ export function Header() {
               Amélie Armand
             </span>
             <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              Pâtisserie · Chocolats
+              Pâtisserie · Chocolaterie · Lyon 9ème
             </span>
           </div>
         </Link>

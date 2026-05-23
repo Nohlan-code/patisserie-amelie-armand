@@ -17,15 +17,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pâtisserie Amélie Armand — Pâtisseries, Chocolats, Viennoiseries",
+  metadataBase: new URL("https://patisserie-amelie-armand.vercel.app"),
+  title: "Pâtisserie Amélie Armand — Lyon 9ème",
   description:
-    "Pâtisserie artisanale Amélie Armand. Pâtisseries, chocolats, viennoiseries et pause salée. Ouverture officielle le 13 mai.",
+    "Pâtisserie & chocolaterie artisanale à Lyon 9ème. Pâtisseries, chocolats d'origine, viennoiseries et pause salée. Ouverture officielle le 13 mai.",
   openGraph: {
-    title: "Pâtisserie Amélie Armand",
+    title: "Pâtisserie Amélie Armand — Lyon 9ème",
     description:
-      "Pâtisseries, chocolats, viennoiseries et pause salée. L'artisanat français à votre table.",
+      "Pâtisseries, chocolats, viennoiseries et pause salée. L'artisanat pâtissier à Lyon 9ème.",
     type: "website",
     locale: "fr_FR",
+    images: ["/creations/pavlova-ouverture.webp"],
   },
 };
 

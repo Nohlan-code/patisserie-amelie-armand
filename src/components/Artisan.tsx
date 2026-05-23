@@ -27,15 +27,14 @@ export function Artisan() {
         <div className="md:col-span-7 md:pt-3">
           <div className="space-y-5 text-[16px] leading-[1.75] text-foreground/85">
             <p>
-              Une boutique, une vitrine, une équipe réduite. Tout se fait ici,
-              dans le laboratoire derrière le comptoir. Pas de production
-              déportée, pas de surgelé, pas de raccourci.
+              Une boutique à Lyon 9ème, une vitrine, un laboratoire derrière le
+              comptoir. Les pâtisseries, les chocolats, les viennoiseries — tout
+              se prépare ici, du tempérage à la cuisson.
             </p>
             <p>
-              Les fournisseurs sont choisis un par un — le beurre, la farine,
-              les fruits, les cacaos d&apos;origine. Les recettes sont
-              retravaillées jusqu&apos;à ce qu&apos;il n&apos;y ait plus rien à
-              retirer.
+              Les chocolats portent le nom de leur origine — Valencia,
+              Montezuma, Cœur de Soie. Les pralinés sont travaillés maison à la
+              pistache, à la noisette, à la cacahuète. Pas de raccourci.
             </p>
             <p className="text-muted-foreground">
               Le reste, c&apos;est la rigueur des gestes, la patience des
@@ -45,8 +44,8 @@ export function Artisan() {
 
           <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border/60 pt-8">
             <Stat value="100 %" label="Fait maison" />
-            <Stat value="AOP" label="Beurre Charentes" />
-            <Stat value="Direct" label="Sourcing producteurs" />
+            <Stat value="Chocolats" label="D'origine" />
+            <Stat value="Lyon 9ème" label="Boutique & atelier" />
           </div>
         </div>
       </div>

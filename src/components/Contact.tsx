@@ -58,10 +58,10 @@ export function Contact() {
               Adresse
             </div>
             <p className="font-serif text-xl text-cream">
-              À communiquer
+              Lyon 9ème
               <br />
               <span className="text-cream/50 text-base">
-                (à compléter par le client)
+                (adresse précise à venir)
               </span>
             </p>
           </div>
@@ -73,10 +73,10 @@ export function Contact() {
               Horaires
             </div>
             <p className="font-serif text-xl text-cream">
-              À communiquer
+              Ouverture le 13 mai
               <br />
               <span className="text-cream/50 text-base">
-                (à compléter par le client)
+                (horaires à confirmer)
               </span>
             </p>
           </div>
