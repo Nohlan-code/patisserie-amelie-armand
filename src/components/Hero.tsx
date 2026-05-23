@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
 const items: CardStackItem[] = [
@@ -129,8 +130,40 @@ export function Hero() {
           cardHeight={size.height}
           spreadDeg={size.spreadDeg}
           overlap={size.overlap}
+          renderCard={(item) => <OptimizedCard item={item} />}
         />
       </div>
     </section>
+  );
+}
+
+function OptimizedCard({ item }: { item: CardStackItem }) {
+  // Premier item = au-dessus du pli → priority. Autres = lazy.
+  const isFirst = item.id === 1;
+  return (
+    <div className="relative h-full w-full">
+      <Image
+        src={item.imageSrc ?? ""}
+        alt={item.title}
+        fill
+        sizes="(max-width: 420px) 240px, (max-width: 640px) 300px, (max-width: 1024px) 400px, 460px"
+        priority={isFirst}
+        loading={isFirst ? undefined : "lazy"}
+        quality={80}
+        draggable={false}
+        className="object-cover"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      <div className="relative z-10 flex h-full flex-col justify-end p-5">
+        <div className="truncate text-lg font-semibold text-white">
+          {item.title}
+        </div>
+        {item.description ? (
+          <div className="mt-1 line-clamp-2 text-sm text-white/80">
+            {item.description}
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }
