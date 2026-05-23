@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
 const items: CardStackItem[] = [
@@ -41,7 +42,37 @@ const items: CardStackItem[] = [
   },
 ];
 
+type StackSize = {
+  width: number;
+  height: number;
+  spreadDeg: number;
+  overlap: number;
+};
+
+function getStackSize(viewportWidth: number): StackSize {
+  if (viewportWidth < 420) {
+    return { width: 240, height: 180, spreadDeg: 30, overlap: 0.55 };
+  }
+  if (viewportWidth < 640) {
+    return { width: 300, height: 220, spreadDeg: 36, overlap: 0.52 };
+  }
+  if (viewportWidth < 1024) {
+    return { width: 400, height: 270, spreadDeg: 42, overlap: 0.5 };
+  }
+  return { width: 460, height: 300, spreadDeg: 48, overlap: 0.48 };
+}
+
 export function Hero() {
+  // Default to mobile sizing during SSR — hydrated to real viewport client-side
+  const [size, setSize] = useState<StackSize>(() => getStackSize(390));
+
+  useEffect(() => {
+    const update = () => setSize(getStackSize(window.innerWidth));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <section
       id="maison"
@@ -56,16 +87,16 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-8 text-center md:pt-24">
-        <div className="mb-6 flex items-center justify-center gap-3">
-          <span className="gold-divider" />
-          <span className="text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
-            Ouverture officielle · 13 mai · Lyon 9ème
+      <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-6 text-center sm:px-6 sm:pt-16 sm:pb-8 md:pt-24">
+        <div className="mb-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:mb-6">
+          <span className="hidden gold-divider sm:inline-block" />
+          <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:text-[11px] sm:tracking-[0.32em]">
+            Ouverture · 13 mai · Lyon 9ème
           </span>
-          <span className="gold-divider" />
+          <span className="hidden gold-divider sm:inline-block" />
         </div>
 
-        <h1 className="text-balance font-serif text-5xl leading-[1.05] text-foreground md:text-7xl">
+        <h1 className="text-balance font-serif text-[2.4rem] leading-[1.05] text-foreground sm:text-5xl md:text-7xl">
           L&apos;artisanat pâtissier,
           <br />
           <em
@@ -80,13 +111,13 @@ export function Hero() {
           </em>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-muted-foreground md:text-lg">
+        <p className="mx-auto mt-5 max-w-2xl text-balance text-[15px] text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
           Pâtisseries, chocolats, viennoiseries et pause salée — créés à la
           main, dans notre laboratoire à Lyon 9ème.
         </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-5xl px-4 pb-20">
+      <div className="relative mx-auto w-full max-w-5xl px-2 pb-14 sm:px-4 sm:pb-20">
         <CardStack
           items={items}
           initialIndex={0}
@@ -94,8 +125,10 @@ export function Hero() {
           intervalMs={3500}
           pauseOnHover
           showDots
-          cardWidth={460}
-          cardHeight={300}
+          cardWidth={size.width}
+          cardHeight={size.height}
+          spreadDeg={size.spreadDeg}
+          overlap={size.overlap}
         />
       </div>
     </section>

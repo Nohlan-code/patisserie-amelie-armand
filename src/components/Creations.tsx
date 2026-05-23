@@ -35,10 +35,10 @@ export function Creations() {
   return (
     <section
       id="creations"
-      className="relative border-b border-border/60 bg-background py-24"
+      className="relative border-b border-border/60 bg-background py-16 sm:py-24"
     >
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-16 text-center">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="mb-12 text-center sm:mb-16">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="gold-divider" />
             <span className="text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
@@ -46,27 +46,27 @@ export function Creations() {
             </span>
             <span className="gold-divider" />
           </div>
-          <h2 className="font-serif text-4xl text-foreground md:text-5xl">
+          <h2 className="font-serif text-[2.1rem] leading-tight text-foreground sm:text-4xl md:text-5xl">
             Quatre univers, une exigence
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:gap-12 md:grid-cols-2">
           {CATEGORIES.map((cat, idx) => (
             <article
               key={cat.nom}
-              className="group relative border border-border/60 bg-card p-8 transition hover:border-gold/60 md:p-10"
+              className="group relative border border-border/60 bg-card p-6 transition hover:border-gold/60 sm:p-8 md:p-10"
             >
-              <div className="mb-6 flex items-baseline justify-between">
+              <div className="mb-5 flex items-baseline justify-between sm:mb-6">
                 <span className="font-serif text-[11px] uppercase tracking-[0.32em] text-gold">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
                 <span className="h-px w-12 bg-gold/40" />
               </div>
-              <h3 className="mb-4 font-serif text-3xl text-foreground">
+              <h3 className="mb-3 font-serif text-2xl text-foreground sm:mb-4 sm:text-3xl">
                 {cat.nom}
               </h3>
-              <p className="mb-6 text-[15px] leading-relaxed text-muted-foreground">
+              <p className="mb-5 text-[14px] leading-relaxed text-muted-foreground sm:mb-6 sm:text-[15px]">
                 {cat.description}
               </p>
               <ul className="flex flex-wrap gap-2">

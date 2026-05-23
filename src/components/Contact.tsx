@@ -21,11 +21,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-noir py-24 text-cream"
+      className="relative bg-noir py-16 text-cream sm:py-24"
       style={{ color: "#f8f4ed" }}
     >
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-12 text-center">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="mb-10 text-center sm:mb-12">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span
               className="inline-block h-px w-12"
@@ -39,7 +39,7 @@ export function Contact() {
               style={{ background: "var(--gold)" }}
             />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl">
+          <h2 className="font-serif text-[2.1rem] leading-tight sm:text-4xl md:text-5xl">
             Passez à la boutique
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-cream/70">
@@ -49,7 +49,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-3">
           <div>
             <div
               className="mb-3 text-[10px] uppercase tracking-[0.32em]"

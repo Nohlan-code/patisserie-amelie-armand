@@ -2,17 +2,17 @@ export function Artisan() {
   return (
     <section
       id="artisan"
-      className="relative border-b border-border/60 bg-secondary/40 py-24"
+      className="relative border-b border-border/60 bg-secondary/40 py-16 sm:py-24"
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 md:grid-cols-12 md:gap-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 sm:gap-16 sm:px-6 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
-          <div className="mb-5 flex items-center gap-3">
+          <div className="mb-4 flex items-center gap-3 sm:mb-5">
             <span className="gold-divider" />
             <span className="text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
               L&apos;artisan
             </span>
           </div>
-          <h2 className="font-serif text-4xl leading-[1.1] text-foreground md:text-5xl">
+          <h2 className="font-serif text-[2.1rem] leading-[1.1] text-foreground sm:text-4xl md:text-5xl">
             Amélie Armand,
             <br />
             <em
@@ -42,10 +42,10 @@ export function Artisan() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border/60 pt-8">
+          <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border/60 pt-6 sm:mt-10 sm:gap-6 sm:pt-8">
             <Stat value="100 %" label="Fait maison" />
-            <Stat value="Chocolats" label="D'origine" />
-            <Stat value="Lyon 9ème" label="Boutique & atelier" />
+            <Stat value="Origine" label="Chocolats" />
+            <Stat value="Lyon 9" label="Boutique & atelier" />
           </div>
         </div>
       </div>
@@ -56,10 +56,10 @@ export function Artisan() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-left">
-      <div className="font-serif text-2xl text-foreground md:text-3xl">
+      <div className="font-serif text-xl leading-tight text-foreground sm:text-2xl md:text-3xl">
         {value}
       </div>
-      <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+      <div className="mt-1 text-[9px] uppercase tracking-[0.18em] text-muted-foreground sm:text-[10px] sm:tracking-[0.22em]">
         {label}
       </div>
     </div>
