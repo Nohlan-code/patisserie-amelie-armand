@@ -14,20 +14,20 @@ const CATEGORIES: Categorie[] = [
   {
     nom: "Chocolats",
     description:
-      "Bonbons, tablettes, sujets. Travail au tempérage, ganaches infusées, sourcing direct chez les producteurs.",
-    exemples: ["Ganaches infusées", "Pralinés maison", "Tablettes d'origine"],
+      "Bonbons, tablettes, sujets. Chocolats d'origine — Valencia, Montezuma, Cœur de Soie — pralinés maison à la pistache, à la noisette, à la cacahuète.",
+    exemples: ["Ganaches", "Pralinés maison", "Tablettes d'origine"],
   },
   {
     nom: "Viennoiseries",
     description:
-      "Beurre AOP Charentes-Poitou, levain naturel, tourage à la main. Le matin, fraîchement sortis du four.",
-    exemples: ["Croissant", "Pain au chocolat", "Brioche feuilletée", "Kouign-amann"],
+      "Tourage à la main, cuisson du matin. Le geste classique, fait sérieusement, pour démarrer la journée.",
+    exemples: ["Croissant", "Pain au chocolat", "Brioche", "Kouign-amann"],
   },
   {
     nom: "Pause salée",
     description:
-      "Pour déjeuner sur le pouce sans renier la qualité. Pâte feuilletée maison, légumes du marché, fromages affinés.",
-    exemples: ["Quiches du jour", "Feuilletés", "Sandwichs signature"],
+      "Pour déjeuner sur le pouce sans renier l'exigence. Quiches du jour, feuilletés, sandwichs préparés en boutique.",
+    exemples: ["Quiches du jour", "Feuilletés", "Sandwichs"],
   },
 ];
 
